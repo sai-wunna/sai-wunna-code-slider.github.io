@@ -1,0 +1,196 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Style the main container */
+.main-wrapper {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+/* Style the intro message */
+.intro-wrapper {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.intro-message {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Style the Start button */
+#start_creation {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the building wrapper */
+.building-wrapper {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.image-box {
+  text-align: center;
+  border: 2px solid #ddd; /* Add a border around the image box */
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  height: 100px;
+  margin: 10px auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 120px;
+  height: 85px;
+  display: inline;
+}
+
+/* Style the form elements */
+.form {
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type='file'] {
+  margin-bottom: 10px;
+}
+
+/* Style the Add Slide button */
+#add_slide_btn,
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the slider container */
+.slider-container {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Style the slides */
+.slides {
+  width: 50%;
+  min-width: 500px;
+  height: 70%;
+  min-height: 300px;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.slide {
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  display: none;
+}
+
+/* Style the slide images */
+.slide img {
+  width: 100%;
+  height: 300px;
+}
+/* Style for slide captions */
+.caption {
+  position: absolute;
+  bottom: -15%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid rgb(11, 7, 83);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 5px;
+  z-index: 1;
+}
+
+/* Style for slide navigation buttons */
+.slider-btns {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.slider-btns .btn {
+  margin: 0 10px; /* Add some spacing between buttons */
+  background-color: #e3e3e3;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slider-btns .notPlaying {
+  background-color: rgb(4, 41, 5);
+  color: white;
+}
+
+.slider-btns .playing {
+  background-color: rgb(143, 13, 13);
+  color: whitesmoke;
+}
+
+/* Optional: Hover effect for buttons */
+.slider-btns .btn:hover {
+  background-color: #b09898;
+}
