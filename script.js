@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const start_slide_btn = buttonCreator('start_slide_btn', 'Create')
         getNode('.form').appendChild(start_slide_btn)
       }
-      alertBox.textContent = `${images.length + 1} Slides Added`
+      alertBox.textContent = `${images.length} Slides Added`
       getNode('.form').reset()
     }
     if (e.target.id === 'start_slide_btn') {
