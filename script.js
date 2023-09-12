@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return img
   }
 
-  const captionCreator = (text, index) => {
+  const captionCreator = (text) => {
     const span = createNode('span')
     span.setAttribute('class', 'caption')
     span.textContent = text
@@ -75,9 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     building_wrapper.setAttribute('class', 'building-wrapper')
     const alertBox = createNode('div')
     alertBox.setAttribute('id', 'alertBox')
+    const Note = createNode('span')
+    Note.textContent = '4 : 3 Ratio Images Are Suitable'
     const image_box = createNode('div')
     image_box.setAttribute('class', 'image-box')
     image_box.setAttribute('id', 'img_box')
+    alertBox.appendChild(Note)
     building_wrapper.appendChild(image_box)
     building_wrapper.appendChild(alertBox)
     building_wrapper.appendChild(addSlideForm())
@@ -210,3 +213,4 @@ document.addEventListener('DOMContentLoaded', () => {
     return
   })
 })
+
