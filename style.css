@@ -8,25 +8,36 @@
 /* Body styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #f8f8f8;
 }
-
+body:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 10%;
+  height: 100%;
+  background-color: #bfbfbf;
+}
 /* Style the main container */
 .main-wrapper {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
 /* Style the intro message */
 .intro-wrapper {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .intro-message {
@@ -49,11 +60,13 @@ body {
 .building-wrapper {
   text-align: center;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
   margin: 20px auto;
   max-width: 700px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .image-box {
@@ -97,6 +110,7 @@ body {
 
 input[type='file'] {
   margin-bottom: 10px;
+  display: none;
 }
 
 /* Style the Add Slide button */
@@ -111,46 +125,49 @@ input[type='file'] {
   cursor: pointer;
 }
 
-/* Style the slider container */
 .slider-container {
+  width: 90%;
   padding: 0;
+  margin: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
   justify-content: center;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  z-index: 3;
+  box-shadow: 0 4px 6px rgba(43, 37, 37, 0.1);
 }
 
-/* Style the slides */
+/* Base styles for slides */
 .slides {
-  width: 50%;
-  min-width: 500px;
-  height: 70%;
-  min-height: 300px;
+  width: 80%;
+  max-width: 500px;
+  height: 60%;
+  max-height: 300px;
   background-color: white;
   border-radius: 25px;
   overflow: hidden;
 }
 
 .slide {
-  box-sizing: border-box;
-  text-align: center;
-  position: relative;
-  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Style the slide images */
-.slide img {
+.slides img {
+  display: block;
   width: 100%;
-  height: 300px;
+  height: auto;
 }
-/* Style for slide captions */
+
+/* Base styles for slide captions */
 .caption {
   position: absolute;
-  bottom: -15%;
-  left: 0%;
+  display: inline;
+  top: 0;
+  left: 0;
   width: 100%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
@@ -161,7 +178,7 @@ input[type='file'] {
   z-index: 1;
 }
 
-/* Style for slide navigation buttons */
+/* Base styles for slide navigation buttons */
 .slider-btns {
   position: absolute;
   bottom: 20%;
@@ -190,7 +207,74 @@ input[type='file'] {
   color: whitesmoke;
 }
 
-/* Optional: Hover effect for buttons */
 .slider-btns .btn:hover {
-  background-color: #b09898;
+  background-color: #d3d3d3;
+  color: black;
+}
+
+/* Responsive styles for screens up to 768px */
+@media (max-width: 768px) {
+  /* Style the building wrapper */
+  .building-wrapper {
+    max-width: 90%;
+  }
+
+  /* Style the image box */
+  .image-box {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Style the form elements */
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  /* Style the Add Slide button */
+  #add_slide_btn,
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+  .slides {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 200px;
+  }
+
+  .slide {
+    object-fit: cover;
+  }
+
+  .slides img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-btns {
+    position: absolute;
+    display: flex;
+    z-index: 2;
+  }
+
+  .slider-btns .btn {
+    font-size: 16px;
+  }
 }
